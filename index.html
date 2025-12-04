@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GreenHome - Экологичная мебель</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Корзина -->
+    <div class="cart-overlay" id="cartOverlay"></div>
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h3><i class="fas fa-shopping-cart"></i> Корзина</h3>
+            <button class="cart-close" id="closeCart">&times;</button>
+        </div>
+        <div class="cart-body" id="cartItems">
+            <div class="cart-empty" id="cartEmpty">
+                <i class="fas fa-shopping-basket"></i>
+                <p>Корзина пуста</p>
+            </div>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Итого:</span>
+                <span id="cartTotalPrice">0 ₽</span>
+            </div>
+            <button class="btn btn-primary btn-block" id="checkoutBtn">Оформить заказ</button>
+        </div>
+    </div>
+
+    <!-- Шапка с видео -->
+    <header class="header">
+        <div class="header-video">
+    <!-- Видеофон -->
+    <video autoplay muted loop playsinline id="heroVideo">
+        <source src="videos/hero-bg.mp4" type="video/mp4">
+        <!-- Фолбэк если видео не работает -->
+        <img src="images/hero-fallback.jpg" alt="Экологичная мебель" style="width:100%; height:100%; object-fit:cover;">
+    </video>
+</div>
+        
+        <!-- Навигация -->
+        <nav class="navbar">
+            <div class="container nav-container">
+                <a href="index.html" class="logo">GreenHome</a>
+                
+                <ul class="nav-menu">
+                    <li><a href="index.html">Главная</a></li>
+                    <li class="dropdown">
+                        <a href="products.html">Товары <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="products.html#sofas">Диваны</a></li>
+                            <li><a href="products.html#chairs">Стулья</a></li>
+                            <li><a href="products.html#tables">Столы</a></li>
+                            <li><a href="products.html#beds">Кровати</a></li>
+                            <li><a href="products.html#storage">Шкафы</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="about.html">О нас</a></li>
+                    <li><a href="#footer-contacts">Контакты</a></li>
+                </ul>
+                
+                <div class="nav-actions">
+                    <button class="contact-btn" id="contactBtn">
+                        <i class="fas fa-comment"></i> Связаться
+                    </button>
+                    <button class="cart-btn" id="cartBtn">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-count" id="cartCount">0</span>
+                    </button>
+                    <button class="menu-toggle" id="mobileMenuToggle">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </nav>
+        
+        <!-- Заголовок -->
+        <div class="hero">
+            <div class="container">
+                <h1 class="hero-title">Экологичная мебель для вашего дома</h1>
+                <p class="hero-subtitle">Натуральные материалы, современный дизайн, доступные цены</p>
+                <a href="products.html" class="btn btn-primary" id="catalogBtn">Смотреть каталог</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Основной контент -->
+    <main class="main">
+        <!-- Преимущества -->
+        <section class="features">
+            <div class="container">
+                <h2 class="section-title">Почему выбирают нас</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <i class="fas fa-leaf"></i>
+                        <h3>Экоматериалы</h3>
+                        <p>Используем только натуральную древесину</p>
+                    </div>
+                    <div class="feature-card">
+                        <i class="fas fa-truck"></i>
+                        <h3>Быстрая доставка</h3>
+                        <p>Доставка по городу за 1-2 дня</p>
+                    </div>
+                    <div class="feature-card">
+                        <i class="fas fa-shield-alt"></i>
+                        <h3>Гарантия 3 года</h3>
+                        <p>На все изделия действует гарантия</p>
+                    </div>
+                    <div class="feature-card">
+                        <i class="fas fa-ruble-sign"></i>
+                        <h3>Доступные цены</h3>
+                        <p>Качественная мебель по разумной цене</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Популярные товары (слайдер) -->
+        <section class="products-preview">
+            <div class="container">
+                <h2 class="section-title">Популярные товары</h2>
+                
+                <div class="slider">
+                    <div class="slider-container">
+                        <!-- Слайд 1 -->
+                        <div class="slide active">
+                            <div class="product-card">
+                                <div class="product-image">
+                                    <img src="images/sofa-green.jpg" alt="Зеленый диван">
+                                </div>
+                                <div class="product-info">
+                                    <h3>Диван "Комфорт"</h3>
+                                    <p>Экокожа, деревянные ножки</p>
+                                    <div class="price">25 990 ₽</div>
+                                    <button class="btn btn-outline add-to-cart" 
+                                            data-id="1" 
+                                            data-name="Диван Комфорт" 
+                                            data-price="25990"
+                                            data-image="images/sofa-green.jpg">
+                                        <i class="fas fa-cart-plus"></i> В корзину
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Слайд 2 -->
+                        <div class="slide">
+                            <div class="product-card">
+                                <div class="product-image">
+                                    <img src="images/table-oak.jpg" alt="Дубовый стол">
+                                </div>
+                                <div class="product-info">
+                                    <h3>Стол дубовый</h3>
+                                    <p>Массив дуба, раздвижной</p>
+                                    <div class="price">18 500 ₽</div>
+                                    <button class="btn btn-outline add-to-cart" 
+                                            data-id="2" 
+                                            data-name="Стол дубовый" 
+                                            data-price="18500"
+                                            data-image="images/table-oak.jpg">
+                                        <i class="fas fa-cart-plus"></i> В корзину
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Слайд 3 -->
+                        <div class="slide">
+                            <div class="product-card">
+                                <div class="product-image">
+                                    <img src="images/chair1.jpg" alt="Эко-стул">
+                                </div>
+                                <div class="product-info">
+                                    <h3>Стул "Эко"</h3>
+                                    <p>Бамбук, тканевая обивка</p>
+                                    <div class="price">4 500 ₽</div>
+                                    <button class="btn btn-outline add-to-cart" 
+                                            data-id="3" 
+                                            data-name="Стул Эко" 
+                                            data-price="4500"
+                                            data-image="images/chair1.jpg">
+                                        <i class="fas fa-cart-plus"></i> В корзину
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <button class="slider-btn prev"><i class="fas fa-chevron-left"></i></button>
+                    <button class="slider-btn next"><i class="fas fa-chevron-right"></i></button>
+                    
+                    <div class="slider-dots">
+                        <span class="dot active"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                    </div>
+                </div>
+                
+                <div class="text-center" style="margin-top: 40px;">
+                    <a href="products.html" class="btn btn-primary">Все товары</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Форма заявки -->
+        <section class="contact-form-section" id="contactFormSection">
+            <div class="container">
+                <div class="form-wrapper">
+                    <div class="form-header">
+                        <h2 class="section-title">Оставьте заявку</h2>
+                        <p>Мы перезвоним вам в течение 30 минут</p>
+                    </div>
+                    
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Имя *</label>
+                            <input type="text" id="name" name="name" required>
+                            <span class="error" id="nameError"></span>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone">Телефон *</label>
+                            <input type="tel" id="phone" name="phone" required placeholder="+7 (___) ___-__-__">
+                            <span class="error" id="phoneError"></span>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email">
+                            <span class="error" id="emailError"></span>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Сообщение</label>
+                            <textarea id="message" name="message" rows="4" placeholder="Опишите вашу задачу..."></textarea>
+                        </div>
+                        
+                        <div class="form-group checkbox-group">
+                            <input type="checkbox" id="consent" name="consent" required>
+                            <label for="consent">Я согласен на обработку персональных данных</label>
+                            <span class="error" id="consentError"></span>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary btn-block" id="submitBtn">
+                            Отправить заявку
+                        </button>
+                        
+                        <div class="form-message" id="formMessage"></div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Футер -->
+    <footer class="footer" id="footer-contacts">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <h3 class="footer-logo">GreenHome</h3>
+                    <p>Экологичная мебель из натуральных материалов</p>
+                    <div class="social">
+                        <a href="#"><i class="fab fa-vk"></i></a>
+                        <a href="#"><i class="fab fa-telegram"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-contacts">
+                    <h4>Контакты</h4>
+                    <p><i class="fas fa-phone"></i> +7 (999) 123-45-67</p>
+                    <p><i class="fas fa-envelope"></i> info@greenhome.ru</p>
+                    <p><i class="fas fa-map-marker-alt"></i> г. Москва, ул. Зелёная, 15</p>
+                    <p><i class="fas fa-clock"></i> Пн-Пт: 9:00-20:00, Сб-Вс: 10:00-18:00</p>
+                </div>
+                
+                <div class="footer-menu">
+                    <h4>Меню</h4>
+                    <ul>
+                        <li><a href="index.html">Главная</a></li>
+                        <li><a href="products.html">Товары</a></li>
+                        <li><a href="about.html">О нас</a></li>
+                        <li><a href="#footer-contacts">Контакты</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 GreenHome</p>
+                <p>Сделанно Марией Захарян</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Мобильное меню -->
+    <div class="mobile-menu-overlay" id="mobileMenuOverlay"></div>
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-menu-header">
+            <span class="mobile-logo">GreenHome</span>
+            <button class="close-menu" id="closeMobileMenu">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <ul class="mobile-nav">
+            <li><a href="index.html">Главная</a></li>
+            <li><a href="products.html">Товары</a></li>
+            <li><a href="about.html">О нас</a></li>
+            <li><a href="#footer-contacts">Контакты</a></li>
+        </ul>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

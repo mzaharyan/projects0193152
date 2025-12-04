@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Товары - GreenHome</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Корзина -->
+    <div class="cart-overlay" id="cartOverlay"></div>
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h3><i class="fas fa-shopping-cart"></i> Корзина</h3>
+            <button class="cart-close" id="closeCart">&times;</button>
+        </div>
+        <div class="cart-body" id="cartItems">
+            <div class="cart-empty" id="cartEmpty">
+                <i class="fas fa-shopping-basket"></i>
+                <p>Корзина пуста</p>
+            </div>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Итого:</span>
+                <span id="cartTotalPrice">0 ₽</span>
+            </div>
+            <button class="btn btn-primary btn-block" id="checkoutBtn">Оформить заказ</button>
+        </div>
+    </div>
+
+    <!-- Навигация -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">GreenHome</a>
+            
+            <ul class="nav-menu">
+                <li><a href="index.html">Главная</a></li>
+                <li class="dropdown">
+                    <a href="products.html">Товары <i class="fas fa-chevron-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#sofas">Диваны</a></li>
+                        <li><a href="#chairs">Стулья</a></li>
+                        <li><a href="#tables">Столы</a></li>
+                        <li><a href="#beds">Кровати</a></li>
+                        <li><a href="#storage">Шкафы</a></li>
+                    </ul>
+                </li>
+                <li><a href="about.html">О нас</a></li>
+                <li><a href="index.html#footer-contacts">Контакты</a></li>
+            </ul>
+            
+            <div class="nav-actions">
+                <button class="contact-btn" id="contactBtn">
+                    <i class="fas fa-comment"></i> Связаться
+                </button>
+                <button class="cart-btn" id="cartBtn">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count" id="cartCount">0</span>
+                </button>
+                <button class="menu-toggle" id="mobileMenuToggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Заголовок страницы -->
+    <header class="page-header">
+        <div class="container">
+            <h1>Наши товары</h1>
+            <p>Большой выбор экологичной мебели для дома и офиса</p>
+        </div>
+    </header>
+
+    <!-- Основной контент -->
+    <main class="products-page">
+        <div class="container">
+            <!-- Категория: Диваны -->
+            <section class="category-section" id="sofas">
+                <h2 class="category-title">Диваны</h2>
+                <div class="products-grid">
+                    <!-- Товар 1 -->
+                    <div class="product-item">
+                        <img src="images/sofa1.jpg" alt="Диван Комфорт">
+                        <div class="product-item-info">
+                            <h3>Диван "Комфорт"</h3>
+                            <p>Экокожа, механизм трансформации</p>
+                            <div class="product-price">25 990 ₽</div>
+                            <button class="btn btn-outline add-to-cart" 
+                                    data-id="11" 
+                                    data-name="Диван Комфорт" 
+                                    data-price="25990"
+                                    data-image="images/sofa1.jpg">
+                                <i class="fas fa-cart-plus"></i> В корзину
+                            </button>
+                            <button class="order-btn" onclick="window.location.href='index.html#contactFormSection'">
+                                <i class="fas fa-shopping-cart"></i> Заказать
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Товар 2 -->
+                    <div class="product-item">
+                        <img src="images/sofa2.jpg" alt="Диван Мини">
+                        <div class="product-item-info">
+                            <h3>Диван "Мини"</h3>
+                            <p>Тканевая обивка, компактный размер</p>
+                            <div class="product-price">18 500 ₽</div>
+                            <button class="btn btn-outline add-to-cart" 
+                                    data-id="12" 
+                                    data-name="Диван Мини" 
+                                    data-price="18500"
+                                    data-image="images/sofa2.jpg">
+                                <i class="fas fa-cart-plus"></i> В корзину
+                            </button>
+                            <button class="order-btn" onclick="window.location.href='index.html#contactFormSection'">
+                                <i class="fas fa-shopping-cart"></i> Заказать
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Товар 3 -->
+                    <div class="product-item">
+                        <img src="images/sofa3.jpg" alt="Угловой диван">
+                        <div class="product-item-info">
+                            <h3>Диван угловой</h3>
+                            <p>Угловая конструкция, велюр</p>
+                            <div class="product-price">34 800 ₽</div>
+                            <button class="btn btn-outline add-to-cart" 
+                                    data-id="13" 
+                                    data-name="Диван угловой" 
+                                    data-price="34800"
+                                    data-image="images/sofa3.jpg">
+                                <i class="fas fa-cart-plus"></i> В корзину
+                            </button>
+                            <button class="order-btn" onclick="window.location.href='index.html#contactFormSection'">
+                                <i class="fas fa-shopping-cart"></i> Заказать
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Категория: Стулья -->
+            <section class="category-section" id="chairs">
+                <h2 class="category-title">Стулья и кресла</h2>
+                <div class="products-grid">
+                    <!-- Товар 1 -->
+                    <div class="product-item">
+                        <img src="images/chair1.jpg" alt="Стул Эко">
+                        <div class="product-item-info">
+                            <h3>Стул "Эко"</h3>
+                            <p>Бамбук, тканевая обивка</p>
+                            <div class="product-price">4 500 ₽</div>
+                            <button class="btn btn-outline add-to-cart" 
+                                    data-id="21" 
+                                    data-name="Стул Эко" 
+                                    data-price="4500"
+                                    data-image="images/chair1.jpg">
+                                <i class="fas fa-cart-plus"></i> В корзину
+                            </button>
+                            <button class="order-btn" onclick="window.location.href='index.html#contactFormSection'">
+                                <i class="fas fa-shopping-cart"></i> Заказать
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Товар 2 -->
+                    <div class="product-item">
+                        <img src="images/chair2.jpg" alt="Кресло офисное">
+                        <div class="product-item-info">
+                            <h3>Кресло офисное</h3>
+                            <p>Сетчатая спинка, регулируемая высота</p>
+                            <div class="product-price">7 800 ₽</div>
+                            <button class="btn btn-outline add-to-cart" 
+                                    data-id="22" 
+                                    data-name="Кресло офисное" 
+                                    data-price="7800"
+                                    data-image="images/chair2.jpg">
+                                <i class="fas fa-cart-plus"></i> В корзину
+                            </button>
+                            <button class="order-btn" onclick="window.location.href='index.html#contactFormSection'">
+                                <i class="fas fa-shopping-cart"></i> Заказать
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Товар 3 -->
+                    <div class="product-item">
+                        <img src="images/chair3.jpg" alt="Барный стул">
+                        <div class="product-item-info">
+                            <h3>Барный стул</h3>
+                            <p>Металлический каркас, деревянное сиденье</p>
+                            <div class="product-price">3 200 ₽</div>
+                            <button class="btn btn-outline add-to-cart" 
+                                    data-id="23" 
+                                    data-name="Барный стул" 
+                                    data-price="3200"
+                                    data-image="images/chair3.jpg">
+                                <i class="fas fa-cart-plus"></i> В корзину
+                            </button>
+                            <button class="order-btn" onclick="window.location.href='index.html#contactFormSection'">
+                                <i class="fas fa-shopping-cart"></i> Заказать
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Категория: Столы -->
+            <section class="category-section" id="tables">
+                <h2 class="category-title">Столы</h2>
+                <div class="products-grid">
+                    <!-- Товар 1 -->
+                    <div class="product-item">
+                        <img src="images/table1.jpg" alt="Стол дубовый">
+                        <div class="product-item-info">
+                            <h3>Стол дубовый</h3>
+                            <p>Массив дуба, раздвижная конструкция</p>
+                            <div class="product-price">18 500 ₽</div>
+                            <button class="btn btn-outline add-to-cart" 
+                                    data-id="31" 
+                                    data-name="Стол дубовый" 
+                                    data-price="18500"
+                                    data-image="images/table1.jpg">
+                                <i class="fas fa-cart-plus"></i> В корзину
+                            </button>
+                            <button class="order-btn" onclick="window.location.href='index.html#contactFormSection'">
+                                <i class="fas fa-shopping-cart"></i> Заказать
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Товар 2 -->
+                    <div class="product-item">
+                        <img src="images/table2.jpg" alt="Кофейный столик">
+                        <div class="product-item-info">
+                            <h3>Кофейный столик</h3>
+                            <p>Стеклянная столешница, металлические ножки</p>
+                            <div class="product-price">9 900 ₽</div>
+                            <button class="btn btn-outline add-to-cart" 
+                                    data-id="32" 
+                                    data-name="Кофейный столик" 
+                                    data-price="9900"
+                                    data-image="images/table2.jpg">
+                                <i class="fas fa-cart-plus"></i> В корзину
+                            </button>
+                            <button class="order-btn" onclick="window.location.href='index.html#contactFormSection'">
+                                <i class="fas fa-shopping-cart"></i> Заказать
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Товар 3 -->
+                    <div class="product-item">
+                        <img src="images/table3.jpg" alt="Письменный стол">
+                        <div class="product-item-info">
+                            <h3>Письменный стол</h3>
+                            <p>ЛДСП, выдвижная полка для клавиатуры</p>
+                            <div class="product-price">12 300 ₽</div>
+                            <button class="btn btn-outline add-to-cart" 
+                                    data-id="33" 
+                                    data-name="Письменный стол" 
+                                    data-price="12300"
+                                    data-image="images/table3.jpg">
+                                <i class="fas fa-cart-plus"></i> В корзину
+                            </button>
+                            <button class="order-btn" onclick="window.location.href='index.html#contactFormSection'">
+                                <i class="fas fa-shopping-cart"></i> Заказать
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Категория: Кровати -->
+            <section class="category-section" id="beds">
+                <h2 class="category-title">Кровати</h2>
+                <div class="products-grid">
+                    <!-- Товар 1 -->
+                    <div class="product-item">
+                        <img src="images/bed1.jpg" alt="Кровать двуспальная">
+                        <div class="product-item-info">
+                            <h3>Кровать двуспальная</h3>
+                            <p>Массив сосны, ортопедическое основание</p>
+                            <div class="product-price">23 500 ₽</div>
+                            <button class="btn btn-outline add-to-cart" 
+                                    data-id="41" 
+                                    data-name="Кровать двуспальная" 
+                                    data-price="23500"
+                                    data-image="images/bed1.jpg">
+                                <i class="fas fa-cart-plus"></i> В корзину
+                            </button>
+                            <button class="order-btn" onclick="window.location.href='index.html#contactFormSection'">
+                                <i class="fas fa-shopping-cart"></i> Заказать
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Товар 2 -->
+                    <div class="product-item">
+                        <img src="images/bed2.jpg" alt="Кровать односпальная">
+                        <div class="product-item-info">
+                            <h3>Кровать односпальная</h3>
+                            <p>Металлический каркас, с ящиками</p>
+                            <div class="product-price">15 800 ₽</div>
+                            <button class="btn btn-outline add-to-cart" 
+                                    data-id="42" 
+                                    data-name="Кровать односпальная" 
+                                    data-price="15800"
+                                    data-image="images/bed2.jpg">
+                                <i class="fas fa-cart-plus"></i> В корзину
+                            </button>
+                            <button class="order-btn" onclick="window.location.href='index.html#contactFormSection'">
+                                <i class="fas fa-shopping-cart"></i> Заказать
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Категория: Шкафы -->
+            <section class="category-section" id="storage">
+                <h2 class="category-title">Шкафы и комоды</h2>
+                <div class="products-grid">
+                    <!-- Товар 1 -->
+                    <div class="product-item">
+                        <img src="images/wardrobe1.jpg" alt="Шкаф-купе">
+                        <div class="product-item-info">
+                            <h3>Шкаф-купе</h3>
+                            <p>3-створчатый, система раздвижных дверей</p>
+                            <div class="product-price">32 000 ₽</div>
+                            <button class="btn btn-outline add-to-cart" 
+                                    data-id="51" 
+                                    data-name="Шкаф-купе" 
+                                    data-price="32000"
+                                    data-image="images/wardrobe1.jpg">
+                                <i class="fas fa-cart-plus"></i> В корзину
+                            </button>
+                            <button class="order-btn" onclick="window.location.href='index.html#contactFormSection'">
+                                <i class="fas fa-shopping-cart"></i> Заказать
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Товар 2 -->
+                    <div class="product-item">
+                        <img src="images/dresser1.jpg" alt="Комод 4-х ящичный">
+                        <div class="product-item-info">
+                            <h3>Комод 4-х ящичный</h3>
+                            <p>С мягкой системой закрытия</p>
+                            <div class="product-price">11 200 ₽</div>
+                            <button class="btn btn-outline add-to-cart" 
+                                    data-id="52" 
+                                    data-name="Комод 4-х ящичный" 
+                                    data-price="11200"
+                                    data-image="images/dresser1.jpg">
+                                <i class="fas fa-cart-plus"></i> В корзину
+                            </button>
+                            <button class="order-btn" onclick="window.location.href='index.html#contactFormSection'">
+                                <i class="fas fa-shopping-cart"></i> Заказать
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Футер -->
+    <footer class="footer" id="footer-contacts">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <h3 class="footer-logo">GreenHome</h3>
+                    <p>Экологичная мебель из натуральных материалов</p>
+                    <div class="social">
+                        <a href="#"><i class="fab fa-vk"></i></a>
+                        <a href="#"><i class="fab fa-telegram"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-contacts">
+                    <h4>Контакты</h4>
+                    <p><i class="fas fa-phone"></i> +7 (999) 123-45-67</p>
+                    <p><i class="fas fa-envelope"></i> info@greenhome.ru</p>
+                    <p><i class="fas fa-map-marker-alt"></i> г. Москва, ул. Зелёная, 15</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2023 GreenHome. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Мобильное меню -->
+    <div class="mobile-menu-overlay" id="mobileMenuOverlay"></div>
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-menu-header">
+            <span class="mobile-logo">GreenHome</span>
+            <button class="close-menu" id="closeMobileMenu">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <ul class="mobile-nav">
+            <li><a href="index.html">Главная</a></li>
+            <li><a href="products.html">Товары</a></li>
+            <li><a href="about.html">О нас</a></li>
+            <li><a href="index.html#footer-contacts">Контакты</a></li>
+        </ul>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

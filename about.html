@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>О нас - GreenHome</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Корзина -->
+    <div class="cart-overlay" id="cartOverlay"></div>
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h3><i class="fas fa-shopping-cart"></i> Корзина</h3>
+            <button class="cart-close" id="closeCart">&times;</button>
+        </div>
+        <div class="cart-body" id="cartItems">
+            <div class="cart-empty" id="cartEmpty">
+                <i class="fas fa-shopping-basket"></i>
+                <p>Корзина пуста</p>
+            </div>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Итого:</span>
+                <span id="cartTotalPrice">0 ₽</span>
+            </div>
+            <button class="btn btn-primary btn-block" id="checkoutBtn">Оформить заказ</button>
+        </div>
+    </div>
+
+    <!-- Навигация -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">GreenHome</a>
+            
+            <ul class="nav-menu">
+                <li><a href="index.html">Главная</a></li>
+                <li class="dropdown">
+                    <a href="products.html">Товары <i class="fas fa-chevron-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="products.html#sofas">Диваны</a></li>
+                        <li><a href="products.html#chairs">Стулья</a></li>
+                        <li><a href="products.html#tables">Столы</a></li>
+                        <li><a href="products.html#beds">Кровати</a></li>
+                        <li><a href="products.html#storage">Шкафы</a></li>
+                    </ul>
+                </li>
+                <li><a href="about.html">О нас</a></li>
+                <li><a href="index.html#footer-contacts">Контакты</a></li>
+            </ul>
+            
+            <div class="nav-actions">
+                <button class="contact-btn" id="contactBtn">
+                    <i class="fas fa-comment"></i> Связаться
+                </button>
+                <button class="cart-btn" id="cartBtn">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count" id="cartCount">0</span>
+                </button>
+                <button class="menu-toggle" id="mobileMenuToggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Заголовок страницы -->
+    <header class="page-header">
+        <div class="container">
+            <h1>О компании GreenHome</h1>
+            <p>Наша история, ценности и миссия</p>
+        </div>
+    </header>
+
+    <!-- Основной контент -->
+    <main class="about-page">
+        <div class="container">
+            <!-- О компании -->
+            <section class="about-section">
+    <div class="about-content">
+        <h2>Наша история</h2>
+        <p>Компания GreenHome была основана в 2015 году. Начав с небольшой мастерской по производству стульев из бамбука, сегодня мы предлагаем полный ассортимент мебели для дома и офиса.</p>
+        
+        <p>Мы верим, что мебель должна быть не только красивой и функциональной, но и безопасной для здоровья и окружающей среды.</p>
+        
+        <div class="about-stats">
+            <div class="stat">
+                <div class="stat-number">8+</div>
+                <div class="stat-label">лет на рынке</div>
+            </div>
+            <div class="stat">
+                <div class="stat-number">500+</div>
+                <div class="stat-label">довольных клиентов</div>
+            </div>
+            <div class="stat">
+                <div class="stat-number">15</div>
+                <div class="stat-label">мастеров в команде</div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="about-video">
+        <!-- Видео о компании -->
+        <div class="video-container">
+            <video controls poster="images/about/video-poster.jpg">
+                <source src="videos/about-company.mp4" type="video/mp4">
+                <source src="videos/about-company.webm" type="video/webm">
+                Ваш браузер не поддерживает видео. 
+                <a href="videos/about-company.mp4">Скачайте видео</a>
+            </video>
+            <div class="video-overlay">
+                <button class="play-btn">
+                    <i class="fas fa-play"></i>
+                </button>
+                <p>Смотрите видео о нашей компании</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+            <!-- Наши ценности -->
+            <section class="values-section">
+                <h2 class="section-title">Наши ценности</h2>
+                <div class="values-grid">
+                    <div class="value-card">
+                        <i class="fas fa-leaf"></i>
+                        <h3>Экологичность</h3>
+                        <p>Используем только натуральные и безопасные материалы</p>
+                    </div>
+                    <div class="value-card">
+                        <i class="fas fa-handshake"></i>
+                        <h3>Качество</h3>
+                        <p>Каждое изделие проходит контроль качества</p>
+                    </div>
+                    <div class="value-card">
+                        <i class="fas fa-users"></i>
+                        <h3>Клиентоориентированность</h3>
+                        <p>Мы слушаем наших клиентов и учитываем их пожелания</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Производство -->
+            <section class="production-section">
+                <h2 class="section-title">Наше производство</h2>
+                <div class="production-content">
+                    <div class="production-image">
+                        <img src="images/about/pr.jpg" alt="Производство мебели">
+                    </div>
+                    <div class="production-info">
+                        <h3>Как мы работаем</h3>
+                        <ul>
+                            <li><i class="fas fa-check"></i> Используем древесину из ответственных источников</li>
+                            <li><i class="fas fa-check"></i> Применяем безопасные лаки и краски</li>
+                            <li><i class="fas fa-check"></i> Каждый этап производства контролируется мастером</li>
+                            <li><i class="fas fa-check"></i> Соблюдаем сроки изготовления</li>
+                            <li><i class="fas fa-check"></i> Предоставляем гарантию на все изделия</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Контакты -->
+            <section class="about-contacts">
+                <h2 class="section-title">Как с нами связаться</h2>
+                <div class="contacts-grid">
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <h3>Адрес</h3>
+                        <p>г. Москва, ул. Зелёная, 15</p>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <h3>Телефон</h3>
+                        <p>+7 (999) 123-45-67</p>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <h3>Email</h3>
+                        <p>info@greenhome.ru</p>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-clock"></i>
+                        <h3>Режим работы</h3>
+                        <p>Пн-Пт: 9:00-20:00<br>Сб-Вс: 10:00-18:00</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Футер -->
+    <footer class="footer" id="footer-contacts">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <h3 class="footer-logo">GreenHome</h3>
+                    <p>Экологичная мебель из натуральных материалов</p>
+                    <div class="social">
+                        <a href="#"><i class="fab fa-vk"></i></a>
+                        <a href="#"><i class="fab fa-telegram"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-contacts">
+                    <h4>Контакты</h4>
+                    <p><i class="fas fa-phone"></i> +7 (999) 123-45-67</p>
+                    <p><i class="fas fa-envelope"></i> info@greenhome.ru</p>
+                    <p><i class="fas fa-map-marker-alt"></i> г. Москва, ул. Зелёная, 15</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2023 GreenHome. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Мобильное меню -->
+    <div class="mobile-menu-overlay" id="mobileMenuOverlay"></div>
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-menu-header">
+            <span class="mobile-logo">GreenHome</span>
+            <button class="close-menu" id="closeMobileMenu">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <ul class="mobile-nav">
+            <li><a href="index.html">Главная</a></li>
+            <li><a href="products.html">Товары</a></li>
+            <li><a href="about.html">О нас</a></li>
+            <li><a href="index.html#footer-contacts">Контакты</a></li>
+        </ul>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
